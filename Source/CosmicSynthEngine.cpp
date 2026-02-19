@@ -208,7 +208,7 @@ void CosmicSynthEngine::render(juce::AudioBuffer<float>& buffer, int startSample
     const float driftDepthCents = 6.0f;
     const float driftPhaseInc = (float)(juce::MathConstants<float>::twoPi * driftHz / (float)sampleRate);
 
-    // Slow filter motion (cosmic “breathing”)
+    // Slow filter motion cosmic “breathing”
     const float filterLfoHz = 0.03f;
     const float filterDepthHz = 1500.0f;
     const float filterPhaseInc = (float)(juce::MathConstants<float>::twoPi * filterLfoHz / (float)sampleRate);
