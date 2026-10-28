@@ -22,6 +22,8 @@
           file="Source/CosmicSynthOscillator.cpp"/>
     <FILE id="Gh0rOW" name="CosmicSynthOscillator.h" compile="0" resource="0"
           file="Source/CosmicSynthOscillator.h"/>
+    <FILE id="ggSGeO" name="GWLookAndFeel.h" compile="0" resource="0" file="Source/GWLookAndFeel.h"/>
+    <FILE id="qQQZuL" name="GWVisuals.h" compile="0" resource="0" file="Source/GWVisuals.h"/>
   </MAINGROUP>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>

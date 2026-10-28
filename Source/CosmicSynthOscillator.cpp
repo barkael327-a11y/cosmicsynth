@@ -45,6 +45,16 @@ void CosmicSynthOscillator::setFrequency(float frequency)
     active = true;
 }
 
+void CosmicSynthOscillator::startAt(float frequency)
+{
+    setFrequency(frequency);
+    // A stopped voice has indexIncrement = 0, so without this the slew would
+    // sweep the pitch up from 0 Hz over the first 10-30 ms of every note:
+    // heard as a click/crackle on presets with a fast attack.
+    indexIncrement = targetIncrement;
+    index = 0.f;   // every wavetable is a sum of sines: 0 at index 0
+}
+
 float CosmicSynthOscillator::getSample()
 {
     if (!active)
@@ -52,7 +62,7 @@ float CosmicSynthOscillator::getSample()
 
     const float sample = interpolateLinearly();
 
-    // Smooth the increment to avoid ìstepî clicks at block boundaries
+    // Smooth the increment to avoid ‚Äústep‚Äù clicks at block boundaries
     indexIncrement = slewA * indexIncrement + (1.0f - slewA) * targetIncrement;
 
     index += indexIncrement;
